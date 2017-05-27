@@ -1,0 +1,5 @@
+--zadanie1
+powerlist [] = [[]]
+powerlist (x:xs) = [x : sublist | sublist <- powerlist xs] ++ powerlist xs  
+
+--zadanie2

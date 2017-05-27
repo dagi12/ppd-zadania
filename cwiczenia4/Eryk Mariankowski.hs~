@@ -1,0 +1,30 @@
+--zadanie1
+powerlist [] = [[]]
+powerlist (x:xs) = [x : sublist | sublist <- powerlist xs] ++ powerlist xs  
+
+--zadanie2
+subset [] _ = True;
+subset (x:xs) l2 = elem x l2 && subset xs l2
+
+--zadanie3
+intersect xs ys = [x | x <- xs, elem x ys]
+
+--zadanie4
+zadanie4POM [] y l = l ++ y
+zadanie4POM (x:xs) y l
+  |  elem x y = zadanie4POM xs y l 
+  |  otherwise = zadanie4POM xs y l ++ [x] 
+
+zadanie4 xs ys = zadanie4POM xs ys []
+
+--zadanie5
+
+-- a) 8 / 2 = 4
+-- a) 24 / 4 = 6
+-- a) 12 / 6 = 2
+-- a) 6 / 2 = 3
+
+-- b) 5==5 && True = True
+-- b) True && 3 > 2 = False
+-- b) False && 1 > 2 = False
+-- b) 

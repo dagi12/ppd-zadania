@@ -1,0 +1,5 @@
+# zadanie 1
+f x =
+  | x > 2 = x*x
+  | x <= 0 = -x
+  | otherwise = x - 1

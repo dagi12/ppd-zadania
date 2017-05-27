@@ -1,0 +1,2 @@
+sm([],[],[]).
+sm([X|XS],[Y|YS],[Z|ZS]) :- Z is X+Y, sm(XS, YS, ZA).

@@ -1,0 +1,49 @@
+-- Zadanie 1e
+import Mojzbior
+
+-- Zadanie 2
+m >> k = m >>= \_ -> k
+
+-- Zadanie 3
+obliczenia = do
+  a <- getLine
+  b <- getLine
+  let x = read a
+  let y = read b
+  putStrLn ("Suma: " ++ show (x + y))
+  putStrLn ("Iloczyn: " ++ show (x * y))
+  putStrLn ("Roznica: " ++ show (x - y))
+
+-- Zadanie 4
+inicjaly = do
+  (x:xs) <- getLine
+  (y:ys) <- getLine
+  putStrLn ([x] ++ [y])
+
+-- Zadanie 5
+graPOM x i = do
+  a <- getLine
+  let n = read a
+  if (n == x) then putStrLn ("zgadles")
+  else if (i == 10) then putStrLn ("przekroczyles ilosc prob")
+  else if ((n < 0) || (n > 99)) then do
+    putStrLn ("niepoprawny format")
+    graPOM x (i+1)
+  else if  (n > x) then do 
+    putStrLn("za dużo")
+    graPOM x (i+1)
+  else if  (n < x) then do
+    putStrLn("za mało")
+    graPOM x (i+1)
+  else do graPOM x (i+1)
+
+gra x = graPOM x 0
+
+-- Zadanie 6
+class Adres a where
+  poprawne :: a -> Bool
+
+data Email = Email { x :: [Char] }
+
+instance Adres Email where
+  poprawne (Email e) = elem '@' e

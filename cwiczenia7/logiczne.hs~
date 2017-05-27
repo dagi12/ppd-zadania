@@ -1,0 +1,7 @@
+-- Zadanie 1
+
+logiczne p q f
+  | f == "koniunkcja" = p && q
+  | f == "alternatywa" = p || q
+  | f == "implikacja" = p <= q
+  | f == "negacja" = not(p)
